@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap');
+
 body {
   margin: 0;
   padding: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
   background-color: #000;
   color: #fff;
 }
@@ -13,12 +15,48 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 2em;
+  font-size: min(2em, 6vw);
   gap: .3em;
   user-select: none;
 }
 
-input {
+#warn {
+  position: absolute;
+  bottom: 1vh;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: .6em;
+  color: #ffffff88;
+}
+
+.check {
+  font-size: .7em;
+  color: #ffffff88;
+  display: flex;
+  align-items: center;
+  gap: .5em;
+}
+
+#checkbox {
+  height: .8em;
+  width: .8em;
+  border: 2px solid #ffffff88;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+#checkbox .inner {
+  display: none;
+}
+
+#checkbox.checkbox-on .inner {
+  transform: translateY(-.2em);
+  display: block;
+  color: #ffffff88;
+  font-size: .9em;
+}
+
+#link {
   font-size: 1em;
   background-color: transparent;
   outline: none;

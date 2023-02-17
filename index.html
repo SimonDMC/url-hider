@@ -3,18 +3,37 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <link rel="icon" href="/favicon.png" />
   <link rel="stylesheet" href="style.css">
   <script src="./script.js" defer></script>
+  <script src="./checkbox.js" defer></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vite App</title>
+  <meta content="URL Hider" property="og:title" />
+  <meta content="A simple tool to hide the URL of the page you're visiting." property="og:description" />
+  <meta content="A simple tool to hide the URL of the page you're visiting." name="description">
+  <meta content="https://hider.simondmc.com" property="og:url" />
+  <meta content="#ffffff" data-react-helmet="true" name="theme-color" />
+  <link rel="apple-touch-icon" href="/favicon.png" />
+  <title>URL Hider</title>
 </head>
 
 <body>
+
   <div class="controls">
+
     <h1>URL Hider</h1>
     <label for="link">Go to: </label>
-    <input type="text" id="link" name="link" />
+    <input type="password" id="link" name="link" />
+
+    <div class="check">
+      Hide Preview
+      <div id="checkbox" class="checkbox-on">
+        <div class="inner">✓</div>
+      </div>
+    </div>
+
+    <div id="warn">Warning: Hovering over or clicking links may reveal their URL.</div>
+
   </div>
 
   <iframe src="https://simondmc.com" frameborder="0" id="iframe"></iframe>

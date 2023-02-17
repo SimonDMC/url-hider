@@ -20,13 +20,26 @@ body {
   user-select: none;
 }
 
+.link-wr {
+  position: relative;
+}
+
+#search {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: .5em;
+  font-size: .8em;
+  cursor: pointer;
+}
+
 #warn {
   position: absolute;
   bottom: 1vh;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: .6em;
+  font-size: .55em;
   color: #ffffff88;
+  text-align: center;
+  width: 100vw;
 }
 
 .check {

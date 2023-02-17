@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="style.css">
   <script src="./script.js" type="module"></script>
   <script src="./checkbox.js" type="module"></script>
+  <script src="https://kit.fontawesome.com/c7b17cb045.js" crossorigin="anonymous"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta content="URL Hider" property="og:title" />
   <meta content="A simple tool to hide the URL of the page you're visiting." property="og:description" />
@@ -23,7 +24,10 @@
 
     <h1>URL Hider</h1>
     <label for="link">Go to: </label>
-    <input type="password" id="link" name="link" />
+    <div class="link-wr">
+      <input type="password" id="link" name="link">
+      <i class="fa-solid fa-magnifying-glass" id="search"></i>
+    </div>
 
     <div class="check">
       Hide Preview

@@ -17,9 +17,11 @@ document.getElementById("link").addEventListener("keydown", function (event) {
             return;
         }
 
-        // add http:// if not present
-        if (!link.value.startsWith("http")) {
-            link.value = "http://" + link.value;
+        // add https:// if not present
+        if (link.value.startsWith("http://")) {
+            link.value = "https://" + link.value.substring(7);
+        } else if (!link.value.startsWith("https://")) {
+            link.value = "https://" + link.value;
         }
 
         // save to local storage

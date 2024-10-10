@@ -1,3 +1,11 @@
+const YOUTUBE_PATTERNS = [
+    /youtube\.com\/watch\?v=([a-zA-Z0-9-_]{11})/, // https://www.youtube.com/watch?v=vRKBGuCHh8Q
+    /youtube\.com\/v\/([a-zA-Z0-9-_]{11})/, // https://www.youtube.com/v/vRKBGuCHh8Q
+    /youtube\.com\/watch\/([a-zA-Z0-9-_]{11})/, // https://www.youtube.com/watch/vRKBGuCHh8Q
+    /youtube\.com\/shorts\/([a-zA-Z0-9-_]{11})/, // https://www.youtube.com/shorts/vRKBGuCHh8Q
+    /youtu\.be\/([a-zA-Z0-9-_]{11})/, // https://youtube.be/vRKBGuCHh8Q
+];
+
 // load link from local storage if present
 const link = localStorage.getItem("url-hider-link");
 if (link) {
@@ -32,6 +40,19 @@ function openLink() {
         link.value = "https://" + link.value.substring(7);
     } else if (!link.value.startsWith("https://")) {
         link.value = "https://" + link.value;
+    }
+
+    // transform to youtube embed link if a youtube video link
+    let id;
+    for (const pattern of YOUTUBE_PATTERNS) {
+        const match = pattern.exec(link.value);
+        if (match) {
+            id = match[1];
+            break;
+        }
+    }
+    if (id) {
+        link.value = "https://youtube.com/embed/" + id;
     }
 
     // save to local storage
